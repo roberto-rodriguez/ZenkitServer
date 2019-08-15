@@ -32,32 +32,32 @@ module.exports = {
   <br/>
  <b>List:</b>
   <br/>
- /<entity>/list?params=<params>
+ /<entity>/list?params=[params]
   <br/>
   <br/>
    <b>Load:</b>
   <br/>
-  /<entity>/load?params=<params>
+  /<entity>/load?params=[params]
  
  <br/>
   <br/>
-    <b>List of nomenclator <id, name> to load in Combobox:</b>
+    <b>List of nomenclator [id, name] to load in Combobox:</b>
   <br/>
-  /<entity>/nomenclator?params=<params>
+  /<entity>/nomenclator?params=[params]
  
  
   <br/>
   <br/>
- <b>Syntax for <params>:</b>
+ <b>Syntax for [params]:</b>
  <br/>
- <field>@is@(<type>)<value>
+ <field>@is@([type])<value>
   <br>
   You can also concatenate more than one params like this:
-  <param>@and@<param>@and@<param>...
+  [param]@and@[param]@and@[param]...
   
   <br/>
   <br/>
- <b>Types of <type>:</b> 
+ <b>Types of [type]:</b> 
  <ol>
   <li>(I) - Integer</li>
   <li>(L) - Long</li>
