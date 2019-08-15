@@ -30,18 +30,18 @@ module.exports = {
  </ul>
  <br/>
   <br/>
- <b>List:</b>
+ <b>List:</b> Return one object containing the list: {List: [list of Objects]}
   <br/>
  /<entity>/list?params=[params]
   <br/>
   <br/>
-   <b>Load:</b>
+   <b>Load:</b>  Return Object
   <br/>
   /<entity>/load?params=[params]
  
  <br/>
   <br/>
-    <b>List of nomenclator [id, name] to load in Combobox:</b>
+    <b>List of nomenclator</b> Return List of objects [id, name] (Used to load in Combobox)
   <br/>
   /<entity>/nomenclator?params=[params]
  
@@ -80,7 +80,7 @@ module.exports = {
   <br/>
   /sprint/load?params=active@is@(B)true
    <br/>
-  List unnactive aprints
+  List unnactive aprints 
   <br/>
   /sprint/list?params=active@is@(B)false
  <br/>
