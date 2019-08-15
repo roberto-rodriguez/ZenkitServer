@@ -17,3 +17,79 @@ Like this:
 module.exports = {
   senkitServerURL: "http://localhost:8088/Front"
 };
+
+
+## API Specification
+
+<b>Entities:</b>
+<ul>
+ <li>client</li>
+ <li>comment</li>
+ <li>sprint</li>
+ <li>task</li> 
+ </ul>
+ <br/>
+  <br/>
+ <b>List:</b>
+  <br/>
+ /<entity>/list?params=<params>
+  <br/>
+  <br/>
+   <b>Load:</b>
+  <br/>
+  /<entity>/load?params=<params>
+ 
+ <br/>
+  <br/>
+    <b>List of nomenclator <id, name> to load in Combobox:</b>
+  <br/>
+  /<entity>/nomenclator?params=<params>
+ 
+ 
+  <br/>
+  <br/>
+ <b>Syntax for <params>:</b>
+ <br/>
+ <field>@is@(<type>)<value>
+  <br>
+  You can also concatenate more than one params like this:
+  <param>@and@<param>@and@<param>...
+  
+  <br/>
+  <br/>
+ <b>Types of <type>:</b> 
+ <ol>
+  <li>(I) - Integer</li>
+  <li>(L) - Long</li>
+  <li>(d) - Double</li>
+  <li>(D) - Date</li>
+  <li>(B) - Boolean</li>
+  <li>(I) - Integer</li>
+  <li>(I) - Integer</li>
+  </ol>
+ 
+  <br/>
+  <br/>
+  <b>Examples:</b>
+  <br/>
+  Load Sprint where id = 2
+  <br/>
+  /sprint/load?params=id@is@(I)2
+  <br/>
+  Load Sprint where active = true
+  <br/>
+  /sprint/load?params=active@is@(B)true
+   <br/>
+  List unnactive aprints
+  <br/>
+  /sprint/list?params=active@is@(B)false
+ <br/>
+  List nomenclators <id, name> of active users
+  <br/>
+  /sprint/nomenclator?params=active@is@(B)true
+  
+  
+  
+  
+ 
+ 
