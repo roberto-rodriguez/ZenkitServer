@@ -50,7 +50,7 @@ module.exports = {
   <br/>
  <b>Syntax for [params]:</b>
  <br/>
- <field>@is@([type])<value>
+ [fieldName]@is@([type])<value>
   <br>
   You can also concatenate more than one params like this:
   [param]@and@[param]@and@[param]...
