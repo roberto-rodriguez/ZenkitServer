@@ -15,6 +15,7 @@ public class CommentDTO extends DTO {
     private Date creationDate;
     private Integer client;
     private Integer task;
+    private Integer flag;
 
     /**
      * @return the id
@@ -43,7 +44,21 @@ public class CommentDTO extends DTO {
     public void setTitle(String title) {
         this.title = title;
     }
- 
+
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     /**
      * @return the creationDate
      */
@@ -58,7 +73,20 @@ public class CommentDTO extends DTO {
         this.creationDate = creationDate;
     }
 
-   
+    /**
+     * @return the client
+     */
+    public Integer getClient() {
+        return client;
+    }
+
+    /**
+     * @param client the client to set
+     */
+    public void setClient(Integer client) {
+        this.client = client;
+    }
+
     /**
      * @return the task
      */
@@ -73,4 +101,19 @@ public class CommentDTO extends DTO {
         this.task = task;
     }
 
+    /**
+     * @return the flag
+     */
+    public Integer getFlag() {
+        return flag;
+    }
+
+    /**
+     * @param flag the flag to set
+     */
+    public void setFlag(Integer flag) {
+        this.flag = flag;
+    }
+
+    
 }

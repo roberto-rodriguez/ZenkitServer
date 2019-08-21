@@ -78,6 +78,8 @@ public abstract class AbstractController<D> {
             @RequestParam(value = "order", defaultValue = "") String order,
             HttpSession session) throws Exception {
 
+        System.out.println("List:: params = " + params);
+
         List<Criterion> data = RequestParser.parseParamsToExpressions(params);
         List<Order> orders = OrderParser.parseOrders(order);
 
@@ -92,13 +94,14 @@ public abstract class AbstractController<D> {
             return dao().pageList(request);
         }
     }
-    
-     @RequestMapping(value = "/persist", method = RequestMethod.POST, consumes = "application/json")
+
+    //This is for the App
+    @RequestMapping(value = "/saveOrUpdate", method = RequestMethod.POST, consumes = "application/json")
     public WebResponse persist(@PathVariable("pageId") String pageId,
             @RequestBody Hash data,
             HttpSession session) throws ParseException {
 
-        try { 
+        try {
             return new WebResponseData(getAbstractManager().save(data));
         } catch (Exception e) {
             e.printStackTrace();
@@ -106,6 +109,7 @@ public abstract class AbstractController<D> {
         }
     }
 
+    //This is for the AMS 
     @RequestMapping(value = "/save", method = RequestMethod.POST, consumes = "application/json")
     public WebResponse save(@PathVariable("pageId") String pageId,
             @RequestBody Hash map,
@@ -121,15 +125,14 @@ public abstract class AbstractController<D> {
         }
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.POST, consumes = "application/json")
-    public WebResponse delete(@PathVariable("pageId") String pageId,
-            @RequestBody Hash map,
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public WebResponse delete(
+            @PathVariable("pageId") String pageId,
+            @PathVariable("id") Integer id,
             HttpSession session) throws ParseException, Exception {
 
         try {
-            Hash data = RequestParser.parseRequestMap(map);
-
-            return getAbstractManager().delete(data);
+            return getAbstractManager().delete(id);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -142,6 +145,8 @@ public abstract class AbstractController<D> {
             @PathVariable("pageId") String pageId,
             @RequestParam(value = "params", defaultValue = "") String params,
             HttpSession session) throws Exception {
+
+        System.out.println("nomenclator params = " + params);
 
         List<Criterion> expressions = RequestParser.parseParamsToExpressions(params);
 

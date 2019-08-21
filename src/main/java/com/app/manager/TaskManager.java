@@ -1,13 +1,17 @@
 package com.app.manager;
 
 import com.app.dao.ClientDAO;
+import com.app.dao.CommentDAO;
 import com.app.dao.TaskDAO;
+import com.app.dto.CommentDTO;
+import com.app.dto.SprintDTO;
 import com.app.dto.TaskDTO;
 import com.app.model.Client;
 import com.app.model.Task;
 import com.system.dao.AbstractBaseDAO;
 import com.system.dto.request.Hash;
 import com.system.manager.AbstractManager;
+import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +30,9 @@ public class TaskManager extends AbstractManager<Task, TaskDTO> {
 
     @Autowired
     private ClientDAO clientDAO;
+
+    @Autowired
+    private CommentDAO commentDAO;
 
     @Override
     public AbstractBaseDAO dao() {
@@ -63,6 +70,11 @@ public class TaskManager extends AbstractManager<Task, TaskDTO> {
     protected void afterCreate(Task entity, Hash data) throws Exception {
         entity.setName("T-" + StringUtils.leftPad(entity.getId() + "", 3, "0"));
         saveOrUpdate(entity);
+    }
+
+    protected void completeLoad(TaskDTO task) {
+        List<CommentDTO> comments = commentDAO.listByTask(task.getId());
+        task.setComments(comments);
     }
 
 }

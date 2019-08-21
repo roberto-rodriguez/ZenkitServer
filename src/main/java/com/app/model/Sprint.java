@@ -29,7 +29,7 @@ public class Sprint extends BaseEntity {
     private String name;
 
     private Boolean active;
-
+ 
     @Column(name = "start_date")
     private String startDate;
 
@@ -156,5 +156,6 @@ public class Sprint extends BaseEntity {
     public void setActive(Boolean active) {
         this.active = active;
     }
+ 
 
 }

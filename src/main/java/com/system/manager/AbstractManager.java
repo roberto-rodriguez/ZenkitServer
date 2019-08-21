@@ -70,6 +70,11 @@ public abstract class AbstractManager<T extends BaseEntity, D> extends BaseManag
         return del(entity);
     }
 
+    public WebResponseData delete(Integer id) throws Exception {
+        T entity = (T) dao().findById(id);
+        return del(entity);
+    }
+
     public T save(Hash data) throws Exception {
         T entity;
         if (data == null) {

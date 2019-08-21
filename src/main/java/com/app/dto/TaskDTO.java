@@ -1,7 +1,9 @@
 package com.app.dto;
 
 import com.system.dto.DTO;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -22,6 +24,7 @@ public class TaskDTO extends DTO {
     private Integer loggedHours;
     private Integer completed;
     private Integer sprint;
+    private List<CommentDTO> comments = new ArrayList<>();
 
     /**
      * @return the id
@@ -203,6 +206,20 @@ public class TaskDTO extends DTO {
      */
     public void setEstimatedHours(Integer estimatedHours) {
         this.estimatedHours = estimatedHours;
+    }
+
+    /**
+     * @return the comments
+     */
+    public List<CommentDTO> getComments() {
+        return comments;
+    }
+
+    /**
+     * @param comments the comments to set
+     */
+    public void setComments(List<CommentDTO> comments) {
+        this.comments = comments;
     }
 
 }

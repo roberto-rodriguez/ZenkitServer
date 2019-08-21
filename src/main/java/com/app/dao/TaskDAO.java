@@ -5,7 +5,6 @@ import com.app.model.Task;
 import com.system.dao.AbstractBaseDAO;
 import java.util.List;
 import org.hibernate.Criteria;
-import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -72,6 +71,11 @@ public class TaskDAO extends AbstractBaseDAO<Task, TaskDTO> {
         applyListProjection(criteria);
 
         return criteria.list();
-
     }
+
+    public void updateFlag(Integer taskId, Integer flag) {
+        query("UPDATE task SET flag = " + flag + " WHERE id = " + taskId);
+    }
+    
+     
 }

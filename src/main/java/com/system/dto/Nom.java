@@ -12,27 +12,22 @@ import java.io.Serializable;
  * @author roberto.rodriguez
  */
 public class Nom implements Serializable {
+
     private static final long serialVersionUID = 1L;
-    
+
     private Integer id;
-    private String nombre;
+    private String name;
 
-    /**
-     * @return the nombre
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * @param nombre the nombre to set
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-        public Integer getId() {
+    public Integer getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -41,7 +36,7 @@ public class Nom implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    
+
     public void setIdx(String id) {
         this.id = Integer.parseInt(id);
     }

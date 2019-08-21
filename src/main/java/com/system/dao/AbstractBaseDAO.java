@@ -151,10 +151,10 @@ public class AbstractBaseDAO<T extends BaseEntity, D> extends BaseDAO<T> {
     }
 
     protected void applyNomenclatorProjection(Criteria criteria) {
-        criteria.addOrder(Order.asc("nombre"));
+        criteria.addOrder(Order.asc(getLabelProperty()));
         ProjectionList projectionList = Projections.projectionList()
                 .add(Projections.property("id").as("id"))
-                .add(Projections.property(getLabelProperty()).as("nombre"));
+                .add(Projections.property(getLabelProperty()).as("name"));
 
         criteria.setProjection(projectionList)
                 .setResultTransformer(Transformers.aliasToBean(Nom.class));

@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package com.system.dev;
-
-import com.system.dao.PageAccessDAO;
+ 
 import com.system.dev.backEnd.ControllerGenerator;
 import com.system.dev.backEnd.DAOGenerator;
 import com.system.dev.backEnd.DTOGenerator;
@@ -58,8 +57,7 @@ public class DevExecutor {
             gridGenerator,
             gridTabGenerator,
             subPanelGenerator,
-            viewTabGenerator,
-            pdfGenerator,
+            viewTabGenerator, 
             modelGenerator,
             dtoGenerator,
             daoGenerator,
@@ -76,11 +74,7 @@ public class DevExecutor {
             IOUtil.writeFile(file, fileConfig.getString("src").trim());
 
             String fullName = fileConfig.getString("fullName");
-
-            if (fullName.endsWith("jrxml")) {
-                pdfGenerator.compileReportToFile(fileConfig, file);
-            }
-
+ 
             if (fullName.contains("Container")) {
                 String entity = devData.getEntityName();
                 PageAccess pageAccess = new PageAccess();
@@ -158,8 +152,6 @@ public class DevExecutor {
 
     @Autowired
     private ViewTabGenerator viewTabGenerator;
-
-    @Autowired
-    private PDFGenerator pdfGenerator;
+ 
 
 }

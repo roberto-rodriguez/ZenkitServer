@@ -41,7 +41,7 @@ public class RequestParser {
     public static List<Criterion> parseParamsToExpressions(String paramsStr) {
         List<Criterion> expressions = new ArrayList<>();
 
-        if (paramsStr == null) {
+        if (paramsStr == null || "undefined".equals(paramsStr)) {
             return expressions;
         }
         paramsStr = paramsStr.replaceAll("%20", " ");

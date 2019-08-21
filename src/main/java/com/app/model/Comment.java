@@ -43,6 +43,8 @@ public class Comment extends BaseEntity {
     @Column(name = "task")
     private Integer task;
 
+    private Integer flag;
+
     /**
      * @return the id
      */
@@ -125,6 +127,20 @@ public class Comment extends BaseEntity {
      */
     public void setClient(Integer client) {
         this.client = client;
+    }
+
+    /**
+     * @return the flag
+     */
+    public Integer getFlag() {
+        return flag;
+    }
+
+    /**
+     * @param flag the flag to set
+     */
+    public void setFlag(Integer flag) {
+        this.flag = flag;
     }
 
 }
