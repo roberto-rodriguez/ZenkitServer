@@ -51,13 +51,13 @@ public class Task extends BaseEntity {
     private Date creationDate;
 
     @Column(name = "estimated_hours")
-    private Integer estimatedHours;
+    private Integer estimatedHours = 0;
 
     @Column(name = "logged_hours")
-    private Integer loggedHours;
+    private Integer loggedHours = 0;
 
     @Column(name = "completed")
-    private Integer completed;
+    private Integer completed = 0;
 
     @Column(name = "sprint")
     private Integer sprint;

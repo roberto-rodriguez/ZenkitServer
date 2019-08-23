@@ -58,12 +58,13 @@ public class TaskManager extends AbstractManager<Task, TaskDTO> {
         entity.setCreationDate(data.getDate("creationDate"));
 
         Integer estimatedHours = data.getInteger("estimatedHours");
-        Integer loggedHours = data.getInteger("loggedHours");
-        Integer completed = (loggedHours * 100) / estimatedHours;
+        //Esto se va a setear con comments
+//        Integer loggedHours = data.getInteger("loggedHours");
+//        Integer completed = (loggedHours * 100) / estimatedHours;
+//         entity.setLoggedHours(loggedHours);
+//        entity.setCompleted(completed);
         entity.setEstimatedHours(estimatedHours);
-        entity.setLoggedHours(loggedHours);
 
-        entity.setCompleted(completed);
         entity.setSprint(data.getInteger("sprint"));
     }
 
